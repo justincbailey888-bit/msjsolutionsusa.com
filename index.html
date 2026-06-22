@@ -26,7 +26,7 @@
             justify-content: center;
             align-items: flex-end;
             padding-top: 60px;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
         }
         /* Bottom Half - Ukrainian Yellow */
         .bottom-half {
@@ -35,8 +35,8 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            padding-top: 40px;
-            padding-bottom: 160px;
+            padding-top: 45px;
+            padding-bottom: 220px; /* Expanded to make perfect room for the shifted slogan */
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -48,12 +48,14 @@
             letter-spacing: 3px;
             text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
         }
+        /* Shifted Lower Slogan */
         h2 {
             color: #1A1A1A; 
             font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 25px;
+            margin-top: 40px;
+            margin-bottom: 0px;
         }
         /* Elegant Quote Block Styling */
         .quote-block {
@@ -100,7 +102,6 @@
         }
         .badge-container {
             display: flex;
-            wrap: wrap;
             gap: 10px;
             margin-top: 15px;
             flex-wrap: wrap;
@@ -129,7 +130,7 @@
             justify-content: space-between;
             padding: 24px 45px;
             pointer-events: none;
-            background: linear-gradient(to top, rgba(255,221,0,1) 70%, rgba(255,221,0,0));
+            background: linear-gradient(to top, rgba(255,221,0,1) 85%, rgba(255,221,0,0));
         }
         .footer-group {
             display: flex;
@@ -166,12 +167,12 @@
         /* Mobile Optimization and Layout Reset */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; letter-spacing: 2px; }
-            h2 { font-size: 1.6rem; margin-bottom: 20px; }
+            h2 { font-size: 1.6rem; margin-top: 30px; margin-bottom: 10px; }
             .quote-block { font-size: 1.05rem; padding-left: 15px; max-width: 100%; margin-bottom: 30px; }
             .about-section { padding: 20px; max-width: 100%; }
             .about-text { font-size: 0.95rem; }
             body { height: auto; }
-            .bottom-half { padding-bottom: 180px; }
+            .bottom-half { padding-bottom: 40px; }
             .footer-contacts {
                 position: relative;
                 flex-direction: column;
@@ -193,8 +194,6 @@
     </div>
     
     <div class="bottom-half">
-        <h2>СЛАВА УКРАЇНІ!</h2>
-        
         <!-- Embedded Quote Block -->
         <div class="quote-block">
             "The only thing necessary for the triumph of evil is for good men to do nothing."
@@ -216,6 +215,9 @@
                 <div class="gov-badge alt">ITAR TRACKING</div>
             </div>
         </div>
+
+        <!-- Shifted Slogan Location -->
+        <h2>СЛАВА УКРАЇНІ!</h2>
     </div>
 
     <!-- Pinned Bottom Navigation Contact Bar -->
