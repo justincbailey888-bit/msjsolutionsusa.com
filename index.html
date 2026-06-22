@@ -12,30 +12,33 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            background-color: #FFDD00;
         }
         /* Top Half - Ukrainian Blue */
         .top-half {
             background-color: #0057B7; 
-            flex: 1;
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            padding-bottom: 50px;
+            padding-top: 60px;
+            padding-bottom: 40px;
         }
         /* Bottom Half - Ukrainian Yellow */
         .bottom-half {
-            background-color: #FFDD00; 
             flex: 1;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 50px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 160px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
         /* Clean White Main Header */
         h1 {
@@ -50,6 +53,70 @@
             font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+        /* Elegant Quote Block Styling */
+        .quote-block {
+            max-width: 650px;
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 600;
+            color: #1A1A1A;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            border-left: 4px solid #1A1A1A;
+            padding-left: 20px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        /* Elite GovCon About Us Panel */
+        .about-section {
+            max-width: 750px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        .about-header {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #0057B7;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0057B7;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .about-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #222222;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .badge-container {
+            display: flex;
+            wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .gov-badge {
+            background-color: #1A1A1A;
+            color: #FFDD00;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+        .gov-badge.alt {
+            background-color: #0057B7;
+            color: #FFFFFF;
         }
         
         /* Pinned Footer Contact Dashboard Layout */
@@ -62,6 +129,7 @@
             justify-content: space-between;
             padding: 24px 45px;
             pointer-events: none;
+            background: linear-gradient(to top, rgba(255,221,0,1) 70%, rgba(255,221,0,0));
         }
         .footer-group {
             display: flex;
@@ -98,10 +166,12 @@
         /* Mobile Optimization and Layout Reset */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; letter-spacing: 2px; }
-            h2 { font-size: 1.6rem; }
-            body { overflow-y: auto; height: auto; min-height: 100vh; }
-            .top-half { padding-top: 60px; padding-bottom: 40px; }
-            .bottom-half { padding-top: 40px; padding-bottom: 150px; }
+            h2 { font-size: 1.6rem; margin-bottom: 20px; }
+            .quote-block { font-size: 1.05rem; padding-left: 15px; max-width: 100%; margin-bottom: 30px; }
+            .about-section { padding: 20px; max-width: 100%; }
+            .about-text { font-size: 0.95rem; }
+            body { height: auto; }
+            .bottom-half { padding-bottom: 180px; }
             .footer-contacts {
                 position: relative;
                 flex-direction: column;
@@ -124,6 +194,28 @@
     
     <div class="bottom-half">
         <h2>СЛАВА УКРАЇНІ!</h2>
+        
+        <!-- Embedded Quote Block -->
+        <div class="quote-block">
+            "The only thing necessary for the triumph of evil is for good men to do nothing."
+        </div>
+
+        <!-- Elite GovCon About Us Section -->
+        <div class="about-section">
+            <div class="about-header">Operational Profile</div>
+            <p class="about-text">
+                MSJ Solutions is a fully compliant, SAM.gov registered federal contractor specializing in agile logistical execution, procurement, and mission-critical support. Operated by a dedicated team of American professionals utilizing direct, boots-on-the-ground operational capability within the Ukrainian theater, we bridge the gap between high-level logistical oversight and immediate end-user integration.
+            </p>
+            <p class="about-text">
+                We maintain active, vetted validation across core DoD and DLA supply frameworks, leveraging extensive, verified technical knowledge within the DIBBS, PIEE, and WAWF ecospheres to navigate complex federal acquisition channels cleanly. Standing ready to support critical multi-domain requirements, we are actively expanding our compliance posture through pending ITAR registration tracking to support specialized defense trade systems.
+            </p>
+            <div class="badge-container">
+                <div class="gov-badge">SAM.GOV COMPLIANT</div>
+                <div class="gov-badge">DLA / DIBBS VETTED</div>
+                <div class="gov-badge">PIEE / WAWF READY</div>
+                <div class="gov-badge alt">ITAR TRACKING</div>
+            </div>
+        </div>
     </div>
 
     <!-- Pinned Bottom Navigation Contact Bar -->
