@@ -24,7 +24,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            padding-bottom: 20px;
+            padding-bottom: 25px;
         }
         /* Bottom Half - Ukrainian Yellow */
         .bottom-half {
@@ -33,14 +33,24 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding-top: 20px;
+            padding-top: 25px;
         }
+        /* American Flag Text Effect */
         h1 {
-            color: #FFFFFF; /* Bright white text over the blue */
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            /* Creates crisp red, white, and blue horizontal stripes inside the text */
+            background: linear-gradient(
+                to bottom, 
+                #B22234 0%, #B22234 33.33%, 
+                #FFFFFF 33.33%, #FFFFFF 66.66%, 
+                #3C3B6E 66.66%, #3C3B6E 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Drop shadow keeps the text highly visible against the blue background */
+            filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
         }
         h2 {
             color: #1A1A1A; /* Dark contrast text over the yellow */
@@ -50,8 +60,8 @@
         }
         /* Mobile Scaling */
         @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.5rem; }
+            h1 { font-size: 2.5rem; letter-spacing: 2px; }
+            h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -61,8 +71,6 @@
         <h1>MSJ SOLUTIONS</h1>
     </div>
     
-    <div class="top-half" style="display:none;"></div> <!-- Structural spacer -->
-
     <div class="bottom-half">
         <h2>СЛАВА УКРАЇНІ!</h2>
     </div>
