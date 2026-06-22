@@ -24,17 +24,19 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            padding-bottom: 20px;
+            padding-bottom: 25px;
         }
         /* Bottom Half - Ukrainian Yellow */
         .bottom-half {
             background-color: #FFDD00; 
             flex: 1;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 20px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 25px;
         }
+        /* Crisp White Text Layout */
         h1 {
             color: #FFFFFF; /* Bright white text over the blue */
             font-size: 3.5rem;
@@ -47,11 +49,35 @@
             font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        /* Sleek Audio Controller Style */
+        .audio-container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .audio-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        audio {
+            height: 32px;
+            outline: none;
         }
         /* Mobile Scaling */
         @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.5rem; }
+            h1 { font-size: 2.2rem; letter-spacing: 2px; }
+            h2 { font-size: 1.6rem; }
+            .audio-container { padding: 8px 16px; }
         }
     </style>
 </head>
@@ -61,10 +87,17 @@
         <h1>MSJ SOLUTIONS</h1>
     </div>
     
-    <div class="top-half" style="display:none;"></div> <!-- Structural spacer -->
-
     <div class="bottom-half">
         <h2>СЛАВА УКРАЇНІ!</h2>
+        
+        <!-- Native Audio Streaming Box -->
+        <div class="audio-container">
+            <span class="audio-title">🎵 SadSvit — Касета</span>
+            <audio controls>
+                <source src="https://archive.org" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
 
 </body>
