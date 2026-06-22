@@ -16,6 +16,8 @@
             display: flex;
             flex-direction: column;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         /* Top Half - Ukrainian Blue */
         .top-half {
@@ -24,7 +26,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            padding-bottom: 25px;
+            padding-bottom: 50px;
         }
         /* Bottom Half - Ukrainian Yellow */
         .bottom-half {
@@ -33,9 +35,9 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding-top: 25px;
+            padding-top: 50px;
         }
-        /* Crisp White Text Layout */
+        /* Clean White Main Header */
         h1 {
             color: #FFFFFF; 
             font-size: 3.5rem;
@@ -49,10 +51,68 @@
             font-weight: 700;
             letter-spacing: 1px;
         }
-        /* Mobile Scaling */
-        @media (max-width: 600px) {
+        
+        /* Pinned Footer Contact Dashboard Layout */
+        .footer-contacts {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 45px;
+            pointer-events: none;
+        }
+        .footer-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            pointer-events: auto;
+        }
+        .footer-group.left {
+            text-align: left;
+        }
+        .footer-group.right {
+            text-align: right;
+        }
+        .contact-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #444444;
+            margin-bottom: 2px;
+        }
+        .contact-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        .contact-link:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        /* Mobile Optimization and Layout Reset */
+        @media (max-width: 768px) {
             h1 { font-size: 2.2rem; letter-spacing: 2px; }
             h2 { font-size: 1.6rem; }
+            body { overflow-y: auto; height: auto; min-height: 100vh; }
+            .top-half { padding-top: 60px; padding-bottom: 40px; }
+            .bottom-half { padding-top: 40px; padding-bottom: 150px; }
+            .footer-contacts {
+                position: relative;
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+                padding: 35px 20px;
+                background-color: #FFDD00;
+            }
+            .footer-group.left, .footer-group.right {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -64,6 +124,23 @@
     
     <div class="bottom-half">
         <h2>СЛАВА УКРАЇНІ!</h2>
+    </div>
+
+    <!-- Pinned Bottom Navigation Contact Bar -->
+    <div class="footer-contacts">
+        <!-- Bottom Left: Grouped Brother Inboxes -->
+        <div class="footer-group left">
+            <span class="contact-label">Operations & Proposals</span>
+            <a href="mailto:info@msjsolutionsusa.com" class="contact-link">info@msjsolutionsusa.com</a>
+            <a href="mailto:proposals@msjsolutionsusa.com" class="contact-link">proposals@msjsolutionsusa.com</a>
+        </div>
+
+        <!-- Bottom Right: Grouped Your Inboxes -->
+        <div class="footer-group right">
+            <span class="contact-label">Contracts & Administration</span>
+            <a href="mailto:contracts@msjsolutionsusa.com" class="contact-link">contracts@msjsolutionsusa.com</a>
+            <a href="mailto:admin@msjsolutionsusa.com" class="contact-link">admin@msjsolutionsusa.com</a>
+        </div>
     </div>
 
 </body>
